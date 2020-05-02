@@ -7,7 +7,7 @@
 		exports["Slider"] = factory(require("react"), require("react-dom"));
 	else
 		root["Slider"] = factory(root["React"], root["ReactDOM"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__2__, __WEBPACK_EXTERNAL_MODULE__4__) {
+})(window, function(__WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__7__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -111,13 +111,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Slider; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _inner_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var json2mq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
-/* harmony import */ var json2mq__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(json2mq__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _default_props__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
-/* harmony import */ var _utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
+/* harmony import */ var json2mq__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var json2mq__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(json2mq__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _default_props__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _inner_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
+/* harmony import */ var _utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -237,12 +237,12 @@ var Slider = /*#__PURE__*/function (_React$Component) {
           var bQuery;
 
           if (index === 0) {
-            bQuery = json2mq__WEBPACK_IMPORTED_MODULE_2___default()({
+            bQuery = json2mq__WEBPACK_IMPORTED_MODULE_0___default()({
               minWidth: 0,
               maxWidth: breakpoint
             });
           } else {
-            bQuery = json2mq__WEBPACK_IMPORTED_MODULE_2___default()({
+            bQuery = json2mq__WEBPACK_IMPORTED_MODULE_0___default()({
               minWidth: breakpoints[index - 1] + 1,
               maxWidth: breakpoint
             });
@@ -257,7 +257,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
         }); // Register media query for full screen. Need to support resize from small to large
         // convert javascript object to media query string
 
-        var query = json2mq__WEBPACK_IMPORTED_MODULE_2___default()({
+        var query = json2mq__WEBPACK_IMPORTED_MODULE_0___default()({
           minWidth: breakpoints.slice(-1)[0]
         });
         Object(_utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_4__["canUseDOM"])() && this.media(query, function () {
@@ -286,9 +286,9 @@ var Slider = /*#__PURE__*/function (_React$Component) {
         newProps = this.props.responsive.filter(function (resp) {
           return resp.breakpoint === _this3.state.breakpoint;
         });
-        settings = newProps[0].settings === "unslick" ? "unslick" : _objectSpread(_objectSpread(_objectSpread({}, _default_props__WEBPACK_IMPORTED_MODULE_3__["default"]), this.props), newProps[0].settings);
+        settings = newProps[0].settings === "unslick" ? "unslick" : _objectSpread(_objectSpread(_objectSpread({}, _default_props__WEBPACK_IMPORTED_MODULE_2__["default"]), this.props), newProps[0].settings);
       } else {
-        settings = _objectSpread(_objectSpread({}, _default_props__WEBPACK_IMPORTED_MODULE_3__["default"]), this.props);
+        settings = _objectSpread(_objectSpread({}, _default_props__WEBPACK_IMPORTED_MODULE_2__["default"]), this.props);
       } // force scrolling by one if centerMode is on
 
 
@@ -315,7 +315,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       } // makes sure that children is an array, even when there is only 1 child
 
 
-      var children = react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.toArray(this.props.children); // Children may contain false or null, so we should filter them
+      var children = react__WEBPACK_IMPORTED_MODULE_1___default.a.Children.toArray(this.props.children); // Children may contain false or null, so we should filter them
       // children may also contain string filled with spaces (in certain cases where we use jsx strings)
 
       children = children.filter(function (child) {
@@ -346,30 +346,30 @@ var Slider = /*#__PURE__*/function (_React$Component) {
             }
 
             if (k >= children.length) break;
-            row.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(children[k], {
+            row.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.cloneElement(children[k], {
               key: 100 * i + 10 * j + k,
               tabIndex: -1,
-              style: {
-                width: "".concat(100 / settings.slidesPerRow, "%"),
-                display: "inline-block"
-              }
+              style: _objectSpread(_objectSpread({}, children[k].props.style), {}, {
+                width: "".concat(100 / settings.slidesPerRow, "%") // display: "inline-block"
+
+              })
             }));
           }
 
-          newSlide.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          newSlide.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
             key: 10 * i + j
           }, row));
         }
 
         if (settings.variableWidth) {
-          newChildren.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          newChildren.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
             key: i,
             style: {
               width: currentWidth
             }
           }, newSlide));
         } else {
-          newChildren.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          newChildren.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
             key: i
           }, newSlide));
         }
@@ -377,14 +377,14 @@ var Slider = /*#__PURE__*/function (_React$Component) {
 
       if (settings === "unslick") {
         var className = "regular slider " + (this.props.className || "");
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: className
         }, newChildren);
       } else if (newChildren.length <= settings.slidesToShow) {
         settings.unslick = true;
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inner_slider__WEBPACK_IMPORTED_MODULE_1__["InnerSlider"], _extends({
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inner_slider__WEBPACK_IMPORTED_MODULE_3__["InnerSlider"], _extends({
         style: this.props.style,
         ref: this.innerSliderRefHandler
       }, settings), newChildren);
@@ -392,37 +392,174 @@ var Slider = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return Slider;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
 
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+var camel2hyphen = __webpack_require__(3);
+
+var isDimension = function (feature) {
+  var re = /[height|width]$/;
+  return re.test(feature);
+};
+
+var obj2mq = function (obj) {
+  var mq = '';
+  var features = Object.keys(obj);
+  features.forEach(function (feature, index) {
+    var value = obj[feature];
+    feature = camel2hyphen(feature);
+    // Add px to dimension features
+    if (isDimension(feature) && typeof value === 'number') {
+      value = value + 'px';
+    }
+    if (value === true) {
+      mq += feature;
+    } else if (value === false) {
+      mq += 'not ' + feature;
+    } else {
+      mq += '(' + feature + ': ' + value + ')';
+    }
+    if (index < features.length-1) {
+      mq += ' and '
+    }
+  });
+  return mq;
+};
+
+var json2mq = function (query) {
+  var mq = '';
+  if (typeof query === 'string') {
+    return query;
+  }
+  // Handling array of media queries
+  if (query instanceof Array) {
+    query.forEach(function (q, index) {
+      mq += obj2mq(q);
+      if (index < query.length-1) {
+        mq += ', '
+      }
+    });
+    return mq;
+  }
+  // Handling single media query
+  return obj2mq(query);
+};
+
+module.exports = json2mq;
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+var camel2hyphen = function (str) {
+  return str
+          .replace(/[A-Z]/g, function (match) {
+            return '-' + match.toLowerCase();
+          })
+          .toLowerCase();
+};
+
+module.exports = camel2hyphen;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__4__;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var defaultProps = {
+  accessibility: true,
+  adaptiveHeight: false,
+  afterChange: null,
+  appendDots: function appendDots(dots) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, dots);
+  },
+  arrows: true,
+  autoplay: false,
+  autoplaySpeed: 3000,
+  beforeChange: null,
+  centerMode: false,
+  centerPadding: "50px",
+  className: "",
+  cssEase: "ease",
+  customPaging: function customPaging(i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, i + 1);
+  },
+  dots: false,
+  dotsClass: "slick-dots",
+  draggable: true,
+  easing: "linear",
+  edgeFriction: 0.35,
+  fade: false,
+  focusOnSelect: false,
+  infinite: true,
+  initialSlide: 0,
+  lazyLoad: null,
+  nextArrow: null,
+  onEdge: null,
+  onInit: null,
+  onLazyLoadError: null,
+  onReInit: null,
+  pauseOnDotsHover: false,
+  pauseOnFocus: false,
+  pauseOnHover: true,
+  prevArrow: null,
+  responsive: null,
+  rows: 1,
+  rtl: false,
+  slide: "div",
+  slidesPerRow: 1,
+  slidesToScroll: 1,
+  slidesToShow: 1,
+  speed: 500,
+  swipe: true,
+  swipeEvent: null,
+  swipeToSlide: false,
+  touchMove: true,
+  touchThreshold: 5,
+  useCSS: true,
+  useTransform: true,
+  variableWidth: false,
+  vertical: false,
+  waitForAnimate: true
+};
+/* harmony default export */ __webpack_exports__["default"] = (defaultProps);
+
+/***/ }),
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InnerSlider", function() { return InnerSlider; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _initial_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
-/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
+/* harmony import */ var _initial_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
-/* harmony import */ var _track__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
-/* harmony import */ var _dots__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
-/* harmony import */ var _arrows__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
-/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
+/* harmony import */ var _utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12);
+/* harmony import */ var _track__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13);
+/* harmony import */ var _dots__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(14);
+/* harmony import */ var _arrows__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(15);
+/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(16);
 
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -1245,13 +1382,13 @@ var InnerSlider = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /***/ }),
-/* 4 */
+/* 7 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__4__;
+module.exports = __WEBPACK_EXTERNAL_MODULE__7__;
 
 /***/ }),
-/* 5 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1289,7 +1426,7 @@ var initialState = {
 /* harmony default export */ __webpack_exports__["default"] = (initialState);
 
 /***/ }),
-/* 6 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -1670,10 +1807,10 @@ function toNumber(value) {
 
 module.exports = debounce;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)))
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports) {
 
 var g;
@@ -1699,7 +1836,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -1756,7 +1893,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1793,9 +1930,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slidesOnRight", function() { return slidesOnRight; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slidesOnLeft", function() { return slidesOnLeft; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "canUseDOM", function() { return canUseDOM; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -2618,17 +2755,17 @@ var canUseDOM = function canUseDOM() {
 };
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Track", function() { return Track; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2876,15 +3013,15 @@ var Track = /*#__PURE__*/function (_React$PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Dots", function() { return Dots; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -3005,18 +3142,18 @@ var Dots = /*#__PURE__*/function (_React$PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrevArrow", function() { return PrevArrow; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NextArrow", function() { return NextArrow; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _utils_innerSliderUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -3186,7 +3323,7 @@ var NextArrow = /*#__PURE__*/function (_React$PureComponent2) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4120,148 +4257,7 @@ var index = (function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(7)))
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var camel2hyphen = __webpack_require__(15);
-
-var isDimension = function (feature) {
-  var re = /[height|width]$/;
-  return re.test(feature);
-};
-
-var obj2mq = function (obj) {
-  var mq = '';
-  var features = Object.keys(obj);
-  features.forEach(function (feature, index) {
-    var value = obj[feature];
-    feature = camel2hyphen(feature);
-    // Add px to dimension features
-    if (isDimension(feature) && typeof value === 'number') {
-      value = value + 'px';
-    }
-    if (value === true) {
-      mq += feature;
-    } else if (value === false) {
-      mq += 'not ' + feature;
-    } else {
-      mq += '(' + feature + ': ' + value + ')';
-    }
-    if (index < features.length-1) {
-      mq += ' and '
-    }
-  });
-  return mq;
-};
-
-var json2mq = function (query) {
-  var mq = '';
-  if (typeof query === 'string') {
-    return query;
-  }
-  // Handling array of media queries
-  if (query instanceof Array) {
-    query.forEach(function (q, index) {
-      mq += obj2mq(q);
-      if (index < query.length-1) {
-        mq += ', '
-      }
-    });
-    return mq;
-  }
-  // Handling single media query
-  return obj2mq(query);
-};
-
-module.exports = json2mq;
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-var camel2hyphen = function (str) {
-  return str
-          .replace(/[A-Z]/g, function (match) {
-            return '-' + match.toLowerCase();
-          })
-          .toLowerCase();
-};
-
-module.exports = camel2hyphen;
-
-/***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-var defaultProps = {
-  accessibility: true,
-  adaptiveHeight: false,
-  afterChange: null,
-  appendDots: function appendDots(dots) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-      style: {
-        display: "block"
-      }
-    }, dots);
-  },
-  arrows: true,
-  autoplay: false,
-  autoplaySpeed: 3000,
-  beforeChange: null,
-  centerMode: false,
-  centerPadding: "50px",
-  className: "",
-  cssEase: "ease",
-  customPaging: function customPaging(i) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, i + 1);
-  },
-  dots: false,
-  dotsClass: "slick-dots",
-  draggable: true,
-  easing: "linear",
-  edgeFriction: 0.35,
-  fade: false,
-  focusOnSelect: false,
-  infinite: true,
-  initialSlide: 0,
-  lazyLoad: null,
-  nextArrow: null,
-  onEdge: null,
-  onInit: null,
-  onLazyLoadError: null,
-  onReInit: null,
-  pauseOnDotsHover: false,
-  pauseOnFocus: false,
-  pauseOnHover: true,
-  prevArrow: null,
-  responsive: null,
-  rows: 1,
-  rtl: false,
-  slide: "div",
-  slidesPerRow: 1,
-  slidesToScroll: 1,
-  slidesToShow: 1,
-  speed: 500,
-  swipe: true,
-  swipeEvent: null,
-  swipeToSlide: false,
-  touchMove: true,
-  touchThreshold: 5,
-  useCSS: true,
-  useTransform: true,
-  variableWidth: false,
-  vertical: false,
-  waitForAnimate: true
-};
-/* harmony default export */ __webpack_exports__["default"] = (defaultProps);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)))
 
 /***/ }),
 /* 17 */
