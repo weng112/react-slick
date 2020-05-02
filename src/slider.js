@@ -1,9 +1,9 @@
 "use strict";
 
-import React from "react";
-import { InnerSlider } from "./inner-slider";
 import json2mq from "json2mq";
+import React from "react";
 import defaultProps from "./default-props";
+import { InnerSlider } from "./inner-slider";
 import { canUseDOM } from "./utils/innerSliderUtils";
 const enquire = canUseDOM() && require("enquire.js");
 
@@ -176,8 +176,9 @@ export default class Slider extends React.Component {
               key: 100 * i + 10 * j + k,
               tabIndex: -1,
               style: {
-                width: `${100 / settings.slidesPerRow}%`,
-                display: "inline-block"
+                ...children[k].props.style,
+                width: `${100 / settings.slidesPerRow}%`
+                // display: "inline-block"
               }
             })
           );
@@ -202,7 +203,11 @@ export default class Slider extends React.Component {
       settings.unslick = true;
     }
     return (
-      <InnerSlider style={this.props.style} ref={this.innerSliderRefHandler} {...settings}>
+      <InnerSlider
+        style={this.props.style}
+        ref={this.innerSliderRefHandler}
+        {...settings}
+      >
         {newChildren}
       </InnerSlider>
     );

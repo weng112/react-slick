@@ -12,6 +12,14 @@ var UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const DEV_PORT = 8080;
 
+gulp.task("cclean", function() {
+  return del(["./bin/*", "!.bin/.git"]);
+});
+gulp.task("ccopy", function() {
+  gulp.src("./dist/**/*").pipe(gulp.dest("./bin/dist"));
+  return gulp.src("./lib/**/*").pipe(gulp.dest("./bin/lib"));
+});
+
 gulp.task("clean", function() {
   return del(["./build/*"]);
 });
