@@ -16,6 +16,7 @@ gulp.task("cclean", function() {
   return del(["./bin/*", "!.bin/.git"]);
 });
 gulp.task("ccopy", function() {
+  gulp.src("./package.json").pipe(gulp.dest("./bin"));
   gulp.src("./dist/**/*").pipe(gulp.dest("./bin/dist"));
   return gulp.src("./lib/**/*").pipe(gulp.dest("./bin/lib"));
 });
